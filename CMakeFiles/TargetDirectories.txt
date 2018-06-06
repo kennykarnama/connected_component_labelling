@@ -1,0 +1,3 @@
+/home/kenny/OpenCV subprograms/connected_components/CMakeFiles/edit_cache.dir
+/home/kenny/OpenCV subprograms/connected_components/CMakeFiles/rebuild_cache.dir
+/home/kenny/OpenCV subprograms/connected_components/CMakeFiles/connected_components.dir
