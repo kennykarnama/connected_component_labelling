@@ -6,16 +6,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 project(connected_components)
 
-find_package( 
+set (OpenCV_DIR "C:/opencv-3.4.5/build/install")
 
-OpenCV REQUIRED 
-)
-
-FIND_PACKAGE( Boost 1.67 COMPONENTS program_options REQUIRED )
-
-
-
-
+find_package( OpenCV REQUIRED )
 
 include_directories(
 header
@@ -27,7 +20,7 @@ library
 
 add_executable(
 	
-	skew_correction
+	ccl
 	source/main.cpp
 	source/union.cpp
 	source/ccl.cpp
@@ -36,11 +29,9 @@ add_executable(
 	
 )
 
-LINK_DIRECTORIES(
-/user/local/lib
-/usr/lib
-/usr/local
-)
 
-target_link_libraries( skew_correction ${OpenCV_LIBS} ${Boost_LIBRARIES} -lboost_random -O2 -larmadillo -llapack -lblas -lpthread -lmysqlcppconn -lfann)
+target_include_directories(ccl PRIVATE ${OpenCV_INCLUDE_DIRS})
+
+target_link_libraries(ccl PRIVATE ${OpenCV_LIBS})
+
 
